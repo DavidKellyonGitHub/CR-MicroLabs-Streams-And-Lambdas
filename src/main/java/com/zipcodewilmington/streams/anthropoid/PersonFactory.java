@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -41,9 +42,7 @@ public final class PersonFactory {
      */ // TODO
     public List<Person> createPersonList(int listSize) {
         ArrayList<Person> people = new ArrayList<>();
-        for (int i = 1; i<= listSize;i++){
-            people.add(createRandomPerson());
-        }
+        IntStream.range(0,listSize).forEach(i -> people.add(createRandomPerson()));
         return people;
     }
 
